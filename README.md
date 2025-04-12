@@ -1,3 +1,15 @@
 # Student-State Shiny App
 
-This is an interactive Shiny app for visualizing student number ratios by state and level from 1975–2017.
+## Author
+- **Name:** Qingwen Liu
+- **Email:** qingwen6@illinois.edu
+
+## Purpose
+The main purpose of this application is to show the ratio of undergraduate, professional, and graduate students at the University of Illinois by their home state in specific year as bar plots and table, and also to calculate the ratio of the total number of students from a given state to the total number of students from all states in that year. People can select specific years, states, and level to view the ratio of undergraduate, professional, graduate and total students.
+
+## Data
+Data is from wadefagen's datasets, which is called students-by-state. It includes state, year, undergrad, professional, grad, and total. The columns of undergrad, professional, grad, and total are all the number of the students. Data is from the year 1975 to 2017. 
+
+## Reference
+
+- [wadefagen's Useful Datasets](https://github.com/wadefagen/datasets)
