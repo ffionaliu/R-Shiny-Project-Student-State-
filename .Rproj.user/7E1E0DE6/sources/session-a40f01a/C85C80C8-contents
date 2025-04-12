@@ -1,0 +1,260 @@
+---
+title: "Homework 4"
+author: "Your Name Here"
+date: "Due 9/21/2023"
+output: pdf_document
+---
+
+# Homework Instructions
+
+**Make sure to add your name to the header of the document.  When submitting the assignment on Gradescope, be sure to assign the appropriate pages of your submission to each Exercise.**
+
+For questions that require code, please create or use the code chunk directly below the question and type your code there.  Your knitted pdf will then show both the code and the output, so that we can assess your understanding and award any partial credit.  
+
+For written questions, please provide your answer after the indicated *Answer* prompt.
+
+You are encouraged to knit your file as you work, to check that your coding and formatting are done so appropriately.  This will also help you identify and locate any errors more easily.
+
+# Homework Setup 
+
+We'll use the following packages for this homework assignment.  
+
+```{r libraryload}
+library(ggplot2)
+```
+
+# Exercise 1: Formatting [5 points]
+
+The first five points of the assignment will be earned for properly formatting your final document.  Check that you have:
+
+- included your name on the document
+- properly assigned pages to exercises on Gradescope
+- select **page 1 (with your name)** and this page for this exercise (Exercise 1)
+- all code is printed and readable for each question
+- generated a pdf file
+
+***
+
+# Exercise 2: Mammalian Sleep Model [23 points]
+
+We'll use the `msleep` dataset from the `ggplot2` package for this assignment.  At first glance of the `msleep` data, you may notice some missing values encoded as NAs.  For this question, we will use the sleep (`sleep_total`) and bodyweight of an animal, which have no missing values.
+
+```{r exercise2starter}
+?msleep
+```
+
+## part a
+
+I wonder about how the amount of sleep required by an animal changes based on the bodyweight of an animal.  For example, do animals who weigh more require more sleep.  What would be the primary purpose of fitting a model like this?  **Bold your answer** below by surrounding your selection with two asterisks "**".
+
+(a) predicting an observation
+(b) explaining a structure/system
+
+## part b
+
+Fit a linear model to estimate the sleep required based on the bodyweight.  Print the summary of this linear model.  Then, write the fitted model based on this output.  Be sure to use proper notation. 
+
+```{r exercise2b}
+# Use this code chunk for your answer.
+```
+
+**Answer:**
+
+## part c
+
+Interpret the intercept for this model.
+
+**Answer:**
+
+## part d
+
+Is the intercept for this model meaningful?  Is it reliable?  Explain.
+
+**Answer:**
+
+## part e
+
+Interpret the slope for this model.
+
+**Answer:**
+
+## part f
+
+Report and interpret the coefficient of determination for this relationship.
+
+```{r exercise2f}
+# Use this code chunk (if needed) to perform any necessary analyses.
+```
+
+**Answer:**
+
+## part g
+
+Based on part f, calculate the correlation.
+
+```{r exercise2g}
+# Use this code chunk (if needed) to perform your analyses.
+```
+
+**Answer:**
+
+***
+
+# Exercise 3: Hand Calculations [30 points]
+
+We've used `R` to generate the summary statistics for the `msleep` dataset so far.  Now let's take a moment and confirm some of these calculations "by hand" (still using `R` to perform the calculations).
+
+## part a
+
+Calculate $\bar{x}$, $\bar{y}$, $S_{xx}$, and $S_{xy}$ for the msleep dataset.  Clearly label and print your results.
+
+```{r exercise3a}
+# Use this code chunk for your answer.
+```
+
+## part b
+
+Calculate the estimates for $\beta_0$ and $\beta_1$, using the values calculated in part a.  Clearly label and print your results.  Compare these estimates to what you found in Exercise 2b.
+
+```{r exercise3b}
+# Use this code chunk for your answer.
+```
+
+**Comparison:**
+
+## part c
+
+Calculate the residuals for the dataset.  You can use any built-in `R` function to generate the fitted values of the dataset, but you should not use a built-in function to calculate the residuals.  No need to print all of the residuals, but please do print the first few residuals.
+
+```{r exercise3c}
+# Use this code chunk for your answer.
+```
+
+## part d
+
+Calculate the SSR, SSE, and SST for the model.  You may use anything that you have calculated in the earlier parts of this question.  Clearly label and print these three values.
+
+```{r exercise3d}
+# Use this code chunk for your answer.
+```
+
+## part e
+
+How are SSR, SSE, and SST related to each other?  
+
+**Answer:**
+
+## part f
+
+Calculate the coefficient of determination from the values calculated in part d.  How does this compare to what you found in Exercise 2d (based on Exercise 2b)?
+
+```{r exercise3f}
+# Use this code chunk for your answer.
+```
+
+**Comparison:**
+
+***
+
+# Exercise 4: Inference for the Mammal Sleep Model [21 points]
+
+## part a
+
+For the Chinchilla (bodyweight of 0.420), calculate the predicted total amount of sleep and the corresponding residual.
+
+```{r exercise4a}
+# Use this code chunk (if needed) to perform any necessary analyses or calculations.
+```
+
+**Answer:**
+
+## part b
+
+Calculate the 80% confidence interval for the slope of this model.  *Note: the multiplier ($t^{*}$) is 1.292 for this situation.*  Make sure to show your setup for the calculation.  Report the 80% confidence interval below.  Based on this confidence interval, is -0.002 a plausible value for the slope predicting sleep from body weight for all mammals?
+
+```{r exercise4b}
+# Use this code chunk, if needed, to calculate your answer.
+```
+
+**Answer:**
+
+## part c
+
+Suppose that a previous study had found that for each increase in the body weight by 1 kg, the estimated average sleep time decreased by -0.01, on average.
+
+Might this same relationship be true for all mammals, including those in our data?  Or is there evidence that this relationship for mammals is different from the one for reptiles?
+
+In other words, use a t-test to test:
+
+- $H_0: \beta_1 = -0.01$
+- $H_1: \beta_1 \neq -0.01$
+
+Calculate and report the value of your test statistic.  Then, based on the size of your test statistic, anticipate what the decision for the statistical test would be with a significance level of $\alpha = 0.05$.
+
+```{r exercise4c}
+# Use this code chunk for your answer.
+```
+
+**Answer:**
+
+## part d
+
+If a news article used this data to make the claim "Gaining weight will make you sleep less!" would you agree with that conclusion?  Why or why not?
+
+_There is not an objectively right answer for this question._  Consider all of the information that we've compiled and calculations that we've performed to help guide your response.
+
+**Answer:**
+
+## part e
+
+For the default hypothesis test for the intercept, report the following:
+
+- The null and alternative hypotheses (in symbols)
+- The value of the test statistic
+- The *p*-value of the test
+
+Be sure to report this information in text below.  No need to calculate any values directly for this part; observing and identifying appropriate information from R output is sufficient.
+
+```{r exercise4e}
+# Use this code chunk for your answer, if needed.
+```
+
+**Answer:**
+
+***
+
+# Exercise 5: Assumptions for the Mammal Sleep Model [21 points]
+
+## part a
+
+For the fitted model to be appropriate and for the inference procedures from Exercise 4 to be valid, certain assumptions must be met.  First, write out the four assumptions.  
+
+**Answer:**
+
+## part b
+
+Which of these four assumptions cannot be checked with a plot?
+
+**Answer:**
+
+## part c
+
+Create the two plots (it's ok if you end up with 4 plots) that we can use to check our assumptions for the mammal sleep data.  Interpret these two plots.  Be sure to specify if the assumptions seem reasonable and describe what you see that supports your conclusions.
+
+```{r exercise5c}
+# Use this code chunk for your answer.
+```
+
+**Answer:**
+
+## part d
+
+There are two additional statistical tests that can be used to help assess our assumptions for the linear model.  Perform these two tests here.  Then, based just on these two tests, assess the corresponding assumptions.
+
+```{r exercise5d}
+# Use this code chunk for your answer.
+```
+
+**Answer:**
+
+***
